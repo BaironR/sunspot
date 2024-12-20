@@ -32,6 +32,7 @@ def main():
 
     df.plot(x="Date", y=sunspot_mean, kind='line')
     plt.xticks(rotation=45, ha='right')
+    plt.ylabel("Series")
     plt.tight_layout()
     plt.show()
 

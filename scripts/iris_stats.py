@@ -15,6 +15,10 @@ def main():
     # El dataframe.
     df_iris = pd.read_csv("../data/iris.csv")
 
+    # El grafico.
+    plt.figure(1, figsize=(12, 8))
+    scatter_matrix(df_iris[df_iris["variety"] == "Iris-virginica"])
+
     # Pregunta 1
     print("\n1. Tipo de datos de cada columna y el numero de valores no nulos:\n")
     print(df_iris.info())
@@ -171,12 +175,6 @@ def main():
 
     df_iris["sepal.ratio"] = df_iris.groupby('variety').apply(lambda group: group['sepal.length'] / group['sepal.width']).reset_index(0, drop=True)
     print(df_iris[["sepal.ratio", "variety"]])
-
-    # El grafico.
-    #scatter_matrix(df[df["variety"] == "Iris-virginica"])
-
-    # Mostrar gráfico
-
 
 
 if __name__ == "__main__":
